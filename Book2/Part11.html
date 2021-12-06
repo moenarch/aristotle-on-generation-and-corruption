@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Part 11 - On Generation and Corruption</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Book1.html"><strong aria-hidden="true">1.</strong> Book 1</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book1/Part1.html"><strong aria-hidden="true">1.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book1/Part2.html"><strong aria-hidden="true">1.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book1/Part3.html"><strong aria-hidden="true">1.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book1/Part4.html"><strong aria-hidden="true">1.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book1/Part5.html"><strong aria-hidden="true">1.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book1/Part6.html"><strong aria-hidden="true">1.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book1/Part7.html"><strong aria-hidden="true">1.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book1/Part8.html"><strong aria-hidden="true">1.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book1/Part9.html"><strong aria-hidden="true">1.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book1/Part10.html"><strong aria-hidden="true">1.10.</strong> Part 10</a></li></ol></li><li class="chapter-item expanded "><a href="../Book2.html"><strong aria-hidden="true">2.</strong> Book 2</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book2/Part1.html"><strong aria-hidden="true">2.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book2/Part2.html"><strong aria-hidden="true">2.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book2/Part3.html"><strong aria-hidden="true">2.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book2/Part4.html"><strong aria-hidden="true">2.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book2/Part5.html"><strong aria-hidden="true">2.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book2/Part6.html"><strong aria-hidden="true">2.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book2/Part7.html"><strong aria-hidden="true">2.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book2/Part8.html"><strong aria-hidden="true">2.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book2/Part9.html"><strong aria-hidden="true">2.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book2/Part10.html"><strong aria-hidden="true">2.10.</strong> Part 10</a></li><li class="chapter-item expanded "><a href="../Book2/Part11.html" class="active"><strong aria-hidden="true">2.11.</strong> Part 11</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">On Generation and Corruption</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="part-11"><a class="header" href="#part-11">Part 11</a></h2>
+<p>Wherever there is continuity in any process (coming-to-be or 'alteration' or any kind of change whatever) we observe consecutiveness', i.e.
+this coming-to-be after that without any interval.
+Hence we must investigate whether, amongst the consecutive members, there is any whose future being is necessary; or whether, on the contrary, every one of them may fail to come-to-be.
+For that some of them may fail to occur, is clear.
+(a) We need only appeal to the distinction between the statements 'x will be' and 'x is about to which depends upon this fact.
+For if it be true to say of x that it 'will be', it must at some time be true to say of it that 'it is': whereas, though it be true to say of x now that 'it is about to occur', it is quite possible for it not to come-to-be-thus a man might not walk, though he is now 'about to' walk.
+And (b) since (to appeal to a general principle) amongst the things which 'are' some are capable also of 'not-being', it is clear that the same ambiguous character will attach to them no less when they are coming-to-be: in other words, their coming-to-be will not be necessary.</p>
+<p>Then are all the things that come-to-be of this contingent character?
+Or, on the contrary, is it absolutely necessary for some of them to come-to-be?
+Is there, in fact, a distinction in the field of 'coming-to-be' corresponding to the distinction, within the field of 'being', between things that cannot possibly 'not-be' and things that can 'not-be'?
+For instance, is it necessary that solstices shall come-to-be, i.e.
+impossible that they should fail to be able to occur?</p>
+<p>Assuming that the antecedent must have come-to-be if the consequent is to be (e.g.
+that foundations must have come-to-be if there is to be a house: clay, if there are to be foundations), is the converse also true?
+If foundations have come-to-be, must a house come-to-be?
+The answer seems to be that the necessary nexus no longer holds, unless it is 'necessary' for the consequent (as well as for the antecedent) to come-to-be-'necessary' absolutely.
+If that be the case, however, 'a house must come to-be if foundations have come-to-be', as well as vice versa.
+For the antecedent was assumed to be so related to the consequent that, if the latter is to be, the antecedent must have come-tobe before it.
+If, therefore, it is necessary that the consequent should come-to-be, the antecedent also must have come-to-be: and if the antecedent has come-to-be, then the consequent also must come-to-be-not, however, because of the antecedent, but because the future being of the consequent was assumed as necessary.
+Hence, in any sequence, when the being of the consequent is necessary, the nexus is reciprocal-in other words, when the antecedent has come-to-be the consequent must always come-to-be too.</p>
+<p>Now (i) if the sequence of occurrences is to proceed ad infinitum 'downwards', the coming to-be of any determinate 'this' amongst the later members of the sequence will not be absolutely, but only conditionally, necessary.
+For it will always be necessary that some other member shall have come-to-be before 'this' as the presupposed condition of the necessity that 'this' should come-to-be: consequently, since what is 'infinite' has no 'originative source', neither will there be in the infinite sequence any 'primary' member which will make it 'necessary' for the remaining members to come-to-be.</p>
+<p>Nor again (ii) will it be possible to say with truth, even in regard to the members of a limited sequence, that it is 'absolutely necessary' for any one of them to come-to-be.
+We cannot truly say, e.g.
+that 'it is absolutely necessary for a house to come-to-be when foundations have been laid': for (unless it is always necessary for a house to be coming-to-be) we should be faced with the consequence that, when foundations have been laid, a thing, which need not always be, must always be.
+No: if its coming-to-be is to be 'necessary', it must be 'always' in its coming-to-be.
+For what is 'of necessity' coincides with what is 'always', since that which 'must be' cannot possibly 'not-be'.
+Hence a thing is eternal if its 'being' is necessary: and if it is eternal, its 'being' is necessary.
+And if, therefore, the 'coming-to-be' of a thing is necessary, its 'coming-to-be' is eternal; and if eternal, necessary.</p>
+<p>It follows that the coming-to-be of anything, if it is absolutely necessary, must be cyclical-i.e.
+must return upon itself.
+For coming to-be must either be limited or not limited: and if not limited, it must be either rectilinear or cyclical.
+But the first of these last two alternatives is impossible if coming-to-be is to be eternal, because there could not be any 'originative source' whatever in an infinite rectilinear sequence, whether its members be taken 'downwards' (as future events) or 'upwards' (as past events).
+Yet coming-to-be must have an 'originative source' (if it is to be necessary and therefore eternal), nor can it be eternal if it is limited.
+Consequently it must be cyclical.
+Hence the nexus must be reciprocal.
+By this I mean that the necessary occurrence of 'this' involves the necessary occurrence of its antecedent: and conversely that, given the antecedent, it is also necessary for the consequent to come-to-be.
+And this reciprocal nexus will hold continuously throughout the sequence: for it makes no difference whether the reciprocal nexus, of which we are speaking, is mediated by two, or by many, members.</p>
+<p>It is in circular movement, therefore, and in cyclical coming-to-be that the 'absolutely necessary' is to be found.
+In other words, if the coming-to-be of any things is cyclical, it is 'necessary' that each of them is coming-to-be and has come-to-be: and if the coming-to-be of any things is 'necessary', their coming-to-be is cyclical.</p>
+<p>The result we have reached is logically concordant with the eternity of circular motion, i.e.
+the eternity of the revolution of the heavens (a fact which approved itself on other and independent evidence),' since precisely those movements which belong to, and depend upon, this eternal revolution 'come-to-be' of necessity, and of necessity 'will be'.
+For since the revolving body is always setting something else in motion, the movement of the things it moves must also be circular.
+Thus, from the being of the 'upper revolution' it follows that the sun revolves in this determinate manner; and since the sun revolves thus, the seasons in consequence come-to-be in a cycle, i.e.
+return upon themselves; and since they come-to-be cyclically, so in their turn do the things whose coming-to-be the seasons initiate.</p>
+<p>Then why do some things manifestly come to-be in this cyclical fashion (as, e.g.
+showers and air, so that it must rain if there is to be a cloud and, conversely, there must be a cloud if it is to rain), while men and animals do not 'return upon themselves' so that the same individual comes-to-be a second time (for though your coming-to-be presupposes your father's, his coming-to-be does not presuppose yours)?
+Why, on the contrary, does this coming-to-be seem to constitute a rectilinear sequence?</p>
+<p>In discussing this new problem, we must begin by inquiring whether all things 'return upon themselves' in a uniform manner; or whether, on the contrary, though in some sequences what recurs is numerically the same, in other sequences it is the same only in species.
+In consequence of this distinction, it is evident that those things, whose 'substance'-that which is undergoing the process-is imperishable, will be numerically, as well as specifically, the same in their recurrence: for the character of the process is determined by the character of that which undergoes it.
+Those things, on the other hand, whose 'substance' is perish, able (not imperishable) must 'return upon themselves' in the sense that what recurs, though specifically the same, is not the same numerically.
+That why, when Water comes-to-be from Air and Air from Water, the Air is the same 'specifically', not 'numerically': and if these too recur numerically the same, at any rate this does not happen with things whose 'substance' comes-to-be-whose 'substance' is such that it is essentially capable of not-being.</p>
+<p>THE END</p>
+<p>Copyright statement: The Internet Classics Archive by Daniel C. Stevenson, Web Atomics.
+World Wide Web presentation is copyright (C) 1994-2000, Daniel C. Stevenson, Web Atomics.
+All rights reserved under international and pan-American copyright conventions, including the right of reproduction in whole or in part in any form.
+Direct permission requests to classics@classics.mit.edu.
+Translation of &quot;The Deeds of the Divine Augustus&quot; by Augustus is copyright (C) Thomas Bushnell, BSG.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Book2/Part10.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Book2/Part10.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

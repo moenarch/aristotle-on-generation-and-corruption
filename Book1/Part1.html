@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Part 1 - On Generation and Corruption</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Book1.html"><strong aria-hidden="true">1.</strong> Book 1</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book1/Part1.html" class="active"><strong aria-hidden="true">1.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book1/Part2.html"><strong aria-hidden="true">1.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book1/Part3.html"><strong aria-hidden="true">1.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book1/Part4.html"><strong aria-hidden="true">1.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book1/Part5.html"><strong aria-hidden="true">1.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book1/Part6.html"><strong aria-hidden="true">1.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book1/Part7.html"><strong aria-hidden="true">1.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book1/Part8.html"><strong aria-hidden="true">1.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book1/Part9.html"><strong aria-hidden="true">1.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book1/Part10.html"><strong aria-hidden="true">1.10.</strong> Part 10</a></li></ol></li><li class="chapter-item expanded "><a href="../Book2.html"><strong aria-hidden="true">2.</strong> Book 2</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book2/Part1.html"><strong aria-hidden="true">2.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book2/Part2.html"><strong aria-hidden="true">2.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book2/Part3.html"><strong aria-hidden="true">2.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book2/Part4.html"><strong aria-hidden="true">2.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book2/Part5.html"><strong aria-hidden="true">2.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book2/Part6.html"><strong aria-hidden="true">2.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book2/Part7.html"><strong aria-hidden="true">2.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book2/Part8.html"><strong aria-hidden="true">2.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book2/Part9.html"><strong aria-hidden="true">2.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book2/Part10.html"><strong aria-hidden="true">2.10.</strong> Part 10</a></li><li class="chapter-item expanded "><a href="../Book2/Part11.html"><strong aria-hidden="true">2.11.</strong> Part 11</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">On Generation and Corruption</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="part-1"><a class="header" href="#part-1">Part 1</a></h2>
+<p>Our next task is to study coming-to-be and passing-away.
+We are to distinguish the causes, and to state the definitions, of these processes considered in general-as changes predicable uniformly of all the things that come-to-be and pass-away by nature.
+Further, we are to study growth and 'alteration'.
+We must inquire what each of them is; and whether 'alteration' is to be identified with coming-to-be, or whether to these different names there correspond two separate processes with distinct natures.</p>
+<p>On this question, indeed, the early philosophers are divided.
+Some of them assert that the so-called 'unqualified coming-to-be' is 'alteration', while others maintain that 'alteration' and coming-to-be are distinct.
+For those who say that the universe is one something (i.e.
+those who generate all things out of one thing) are bound to assert that coming-to-be is 'alteration', and that whatever 'comes-to-be' in the proper sense of the term is 'being altered': but those who make the matter of things more than one must distinguish coming-to-be from 'alteration'.
+To this latter class belong Empedocles, Anaxagoras, and Leucippus.
+And yet Anaxagoras himself failed to understand his own utterance.
+He says, at all events, that coming-to-be and passing-away are the same as 'being altered':' yet, in common with other thinkers, he affirms that the elements are many.
+Thus Empedocles holds that the corporeal elements are four, while all the elements-including those which initiate movement-are six in number; whereas Anaxagoras agrees with Leucippus and Democritus that the elements are infinite.</p>
+<p>(Anaxagoras posits as elements the 'homoeomeries', viz.
+bone, flesh, marrow, and everything else which is such that part and whole are the same in name and nature; while Democritus and Leucippus say that there are indivisible bodies, infinite both in number and in the varieties of their shapes, of which everything else is composed-the compounds differing one from another according to the shapes, 'positions', and 'groupings' of their constituents.)</p>
+<p>For the views of the school of Anaxagoras seem diametrically opposed to those of the followers of Empedocles.
+Empedocles says that Fire, Water, Air, and Earth are four elements, and are thus 'simple' rather than flesh, bone, and bodies which, like these, are 'homoeomeries'.
+But the followers of Anaxagoras regard the 'homoeomeries' as 'simple' and elements, whilst they affirm that Earth, Fire, Water, and Air are composite; for each of these is (according to them) a 'common seminary' of all the 'homoeomeries'.</p>
+<p>Those, then, who construct all things out of a single element, must maintain that coming-tobe and passing-away are 'alteration'.
+For they must affirm that the underlying something always remains identical and one; and change of such a substratum is what we call 'altering' Those, on the other hand, who make the ultimate kinds of things more than one, must maintain that 'alteration' is distinct from coming-to-be: for coming-to-be and passingaway result from the consilience and the dissolution of the many kinds.
+That is why Empedocles too uses language to this effect, when he says 'There is no coming-to-be of anything, but only a mingling and a divorce of what has been mingled'.
+Thus it is clear (i) that to describe coming-to-be and passing-away in these terms is in accordance with their fundamental assumption, and (ii) that they do in fact so describe them: nevertheless, they too must recognize 'alteration' as a fact distinct from coming to-be, though it is impossible for them to do so consistently with what they say.</p>
+<p>That we are right in this criticism is easy to perceive.
+For 'alteration' is a fact of observation.
+While the substance of the thing remains unchanged, we see it 'altering' just as we see in it the changes of magnitude called 'growth' and 'diminution'.
+Nevertheless, the statements of those who posit more 'original reals' than one make 'alteration' impossible.
+For 'alteration, as we assert, takes place in respect to certain qualities: and these qualities (I mean, e.g.
+hot-cold, white-black, dry-moist, soft-hard, and so forth) are, all of them, differences characterizing the 'elements'.
+The actual words of Empedocles may be quoted in illustration-</p>
+<p>The sun everywhere bright to see, and hot,  The rain everywhere dark and cold; and he distinctively characterizes his remaining elements in a similar manner.
+Since, therefore, it is not possible for Fire to become Water, or Water to become Earth, neither will it be possible for anything white to become black, or anything soft to become hard; and the same argument applies to all the other qualities.
+Yet this is what 'alteration' essentially is.</p>
+<p>It follows, as an obvious corollary, that a single matter must always be assumed as underlying the contrary 'poles' of any change whether change of place, or growth and diminution, or 'alteration'; further, that the being of this matter and the being of 'alteration' stand and fall together.
+For if the change is 'alteration', then the substratum is a single element; i.e.
+all things which admit of change into one another have a single matter.
+And, conversely, if the substratum of the changing things is one, there is 'alteration'.</p>
+<p>Empedocles, indeed, seems to contradict his own statements as well as the observed facts.
+For he denies that any one of his elements comes-to-be out of any other, insisting on the contrary that they are the things out of which everything else comes-to-be; and yet (having brought the entirety of existing things, except Strife, together into one) he maintains, simultaneously with this denial, that each thing once more comes-to-be out of the One.
+Hence it was clearly out of a One that this came-to-be Water, and that Fire, various portions of it being separated off by certain characteristic differences or qualities-as indeed he calls the sun 'white and hot', and the earth 'heavy and hard'.
+If, therefore, these characteristic differences be taken away (for they can be taken away, since they came-to-be), it will clearly be inevitable for Earth to come to-be out of Water and Water out of Earth, and for each of the other elements to undergo a similar transformation-not only then, but also now-if, and because, they change their qualities.
+And, to judge by what he says, the qualities are such that they can be 'attached' to things and can again be 'separated' from them, especially since Strife and Love are still fighting with one another for the mastery.
+It was owing to this same conflict that the elements were generated from a One at the former period.
+I say 'generated', for presumably Fire, Earth, and Water had no distinctive existence at all while merged in one.</p>
+<p>There is another obscurity in the theory Empedocles.
+Are we to regard the One as his 'original real'?
+Or is it the Many-i.e.
+Fire and Earth, and the bodies co-ordinate with these?
+For the One is an 'element' in so far as it underlies the process as matter-as that out of which Earth and Fire come-to-be through a change of qualities due to 'the motion'.
+On the other hand, in so far as the One results from composition (by a consilience of the Many), whereas they result from disintegration the Many are more 'elementary' than the One, and prior to it in their nature.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Book1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Book1/Part2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Book1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Book1/Part2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

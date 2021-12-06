@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Part 10 - On Generation and Corruption</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Book1.html"><strong aria-hidden="true">1.</strong> Book 1</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book1/Part1.html"><strong aria-hidden="true">1.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book1/Part2.html"><strong aria-hidden="true">1.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book1/Part3.html"><strong aria-hidden="true">1.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book1/Part4.html"><strong aria-hidden="true">1.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book1/Part5.html"><strong aria-hidden="true">1.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book1/Part6.html"><strong aria-hidden="true">1.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book1/Part7.html"><strong aria-hidden="true">1.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book1/Part8.html"><strong aria-hidden="true">1.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book1/Part9.html"><strong aria-hidden="true">1.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book1/Part10.html"><strong aria-hidden="true">1.10.</strong> Part 10</a></li></ol></li><li class="chapter-item expanded "><a href="../Book2.html"><strong aria-hidden="true">2.</strong> Book 2</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Book2/Part1.html"><strong aria-hidden="true">2.1.</strong> Part 1</a></li><li class="chapter-item expanded "><a href="../Book2/Part2.html"><strong aria-hidden="true">2.2.</strong> Part 2</a></li><li class="chapter-item expanded "><a href="../Book2/Part3.html"><strong aria-hidden="true">2.3.</strong> Part 3</a></li><li class="chapter-item expanded "><a href="../Book2/Part4.html"><strong aria-hidden="true">2.4.</strong> Part 4</a></li><li class="chapter-item expanded "><a href="../Book2/Part5.html"><strong aria-hidden="true">2.5.</strong> Part 5</a></li><li class="chapter-item expanded "><a href="../Book2/Part6.html"><strong aria-hidden="true">2.6.</strong> Part 6</a></li><li class="chapter-item expanded "><a href="../Book2/Part7.html"><strong aria-hidden="true">2.7.</strong> Part 7</a></li><li class="chapter-item expanded "><a href="../Book2/Part8.html"><strong aria-hidden="true">2.8.</strong> Part 8</a></li><li class="chapter-item expanded "><a href="../Book2/Part9.html"><strong aria-hidden="true">2.9.</strong> Part 9</a></li><li class="chapter-item expanded "><a href="../Book2/Part10.html" class="active"><strong aria-hidden="true">2.10.</strong> Part 10</a></li><li class="chapter-item expanded "><a href="../Book2/Part11.html"><strong aria-hidden="true">2.11.</strong> Part 11</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">On Generation and Corruption</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="part-10"><a class="header" href="#part-10">Part 10</a></h2>
+<p>As to our own theory-we have given a general account of the causes in an earlier work,' we have now explained and distinguished the 'matter' and the 'form'.
+Further, since the change which is motion has been proved' to be eternal, the continuity of the occurrence of coming-to-be follows necessarily from what we have established: for the eternal motion, by causing 'the generator' to approach and retire, will produce coming-to-be uninterruptedly.
+At the same time it is clear that we were right when, in an earlier work,' we called motion (not coming-to-be) 'the primary form of change'.
+For it is far more reasonable that what is should cause the coming-to-be of what is not, than that what is not should cause the being of what is.
+Now that which is being moved is, but that which is coming-to-be is not: hence, also, motion is prior to coming-to-be.</p>
+<p>We have assumed, and have proved, that coming-to-be and passing-away happen to things continuously; and we assert that motion causes coming-to-be.
+That being so, it is evident that, if the motion be single, both processes cannot occur since they are contrary to one another: for it is a law of nature that the same cause, provided it remain in the same condition, always produces the same effect, so that, from a single motion, either coming-to-be or passing-away will always result.
+The movements must, on the contrary, be more than one, and they must be contrasted with one another either by the sense of their motion or by its irregularity: for contrary effects demand contraries as their causes.</p>
+<p>This explains why it is not the primary motion that causes coming-to-be and passingaway, but the motion along the inclined circle: for this motion not only possesses the necessary continuity, but includes a duality of movements as well.
+For if coming-to-be and passing-away are always to be continuous, there must be some body always being moved (in order that these changes may not fail) and moved with a duality of movements (in order that both changes, not one only, may result).
+Now the continuity of this movement is caused by the motion of the whole: but the approaching and retreating of the moving body are caused by the inclination.
+For the consequence of the inclination is that the body becomes alternately remote and near; and since its distance is thus unequal, its movement will be irregular.
+Therefore, if it generates by approaching and by its proximity, it-this very same body-destroys by retreating and becoming remote: and if it generates by many successive approaches, it also destroys by many successive retirements.
+For contrary effects demand contraries as their causes; and the natural processes of passing-away and coming-to-be occupy equal periods of time.
+Hence, too, the times-i.e.
+the lives-of the several kinds of living things have a number by which they are distinguished: for there is an Order controlling all things, and every time (i.e.
+every life) is measured by a period.
+Not all of them, however, are measured by the same period, but some by a smaller and others by a greater one: for to some of them the period, which is their measure, is a year, while to some it is longer and to others shorter.</p>
+<p>And there are facts of observation in manifest agreement with our theories.
+Thus we see that coming-to-be occurs as the sun approaches and decay as it retreats; and we see that the two processes occupy equal times.
+For the durations of the natural processes of passing-away and coming-to-be are equal.
+Nevertheless it Often happens that things pass-away in too short a time.
+This is due to the 'intermingling' by which the things that come-to-be and pass-away are implicated with one another.
+For their matter is 'irregular', i.e.
+is not everywhere the same: hence the processes by which they come-to-be must be 'irregular' too, i.e.
+some too quick and others too slow.
+Consequently the phenomenon in question occurs, because the 'irregular' coming-to-be of these things is the passing-away of other things.</p>
+<p>Coming-to-be and passing-away will, as we have said, always be continuous, and will never fail owing to the cause we stated.
+And this continuity has a sufficient reason on our theory.
+For in all things, as we affirm, Nature always strives after 'the better'.
+Now 'being' (we have explained elsewhere the exact variety of meanings we recognize in this term) is better than 'not-being': but not all things can possess 'being', since they are too far removed from the 'originative source.
+'God therefore adopted the remaining alternative, and fulfilled the perfection of the universe by making coming-to-be uninterrupted: for the greatest possible coherence would thus be secured to existence, because that 'coming-to-be should itself come-to-be perpetually' is the closest approximation to eternal being.</p>
+<p>The cause of this perpetuity of coming-to-be, as we have often said, is circular motion: for that is the only motion which is continuous.
+That, too, is why all the other things-the things, I mean, which are reciprocally transformed in virtue of their 'passions' and their 'powers of action' e.g.
+the 'simple' bodiesimitate circular motion.
+For when Water is transformed into Air, Air into Fire, and the Fire back into Water, we say the coming-to-be 'has completed the circle', because it reverts again to the beginning.
+Hence it is by imitating circular motion that rectilinear motion too is continuous.</p>
+<p>These considerations serve at the same time to explain what is to some people a baffling problem-viz.
+why the 'simple' bodies, since each them is travelling towards its own place, have not become dissevered from one another in the infinite lapse of time.
+The reason is their reciprocal transformation.
+For, had each of them persisted in its own place instead of being transformed by its neighbour, they would have got dissevered long ago.
+They are transformed, however, owing to the motion with its dual character: and because they are transformed, none of them is able to persist in any place allotted to it by the Order.</p>
+<p>It is clear from what has been said (i) that coming-to-be and passing-away actually occur, (ii) what causes them, and (iii) what subject undergoes them.
+But (a) if there is to be movement (as we have explained elsewhere, in an earlier work') there must be something which initiates it; if there is to be movement always, there must always be something which initiates it; if the movement is to be continuous, what initiates it must be single, unmoved, ungenerated, and incapable of 'alteration'; and if the circular movements are more than one, their initiating causes must all of them, in spite of their plurality, be in some way subordinated to a single 'originative source'.
+Further (b) since time is continuous, movement must be continuous, inasmuch as there can be no time without movement.
+Time, therefore, is a 'number' of some continuous movement-a 'number', therefore, of the circular movement, as was established in the discussions at the beginning.
+But (c) is movement continuous because of the continuity of that which is moved, or because that in which the movement occurs (I mean, e.g.
+the place or the quality) is continuous?
+The answer must clearly be 'because that which is moved is continuous'.
+(For how can the quality be continuous except in virtue of the continuity of the thing to which it belongs?
+But if the continuity of 'that in which' contributes to make the movement continuous, this is true only of 'the place in which'; for that has 'magnitude' in a sense.)
+But (d) amongst continuous bodies which are moved, only that which is moved in a circle is 'continuous' in such a way that it preserves its continuity with itself throughout the movement.
+The conclusion therefore is that this is what produces continuous movement, viz.
+the body which is being moved in a circle; and its movement makes time continuous.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Book2/Part9.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Book2/Part11.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Book2/Part9.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Book2/Part11.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
